@@ -100,5 +100,14 @@
     /* start the experiment */
     jsPsych.run(timeline);
 
+    on_finish: function() {
+  jsPsych.data.get().localSave('csv','data.csv');
+}
+
+    var end_message = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "<p>Terima kasih! Data Anda telah tersimpan. Silakan kirim file yang terdownload.</p>"
+};
+    
   </script>
 </html>
